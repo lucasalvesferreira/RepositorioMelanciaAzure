@@ -50,6 +50,7 @@
     <div class="div1">
       <form id="form_cadastroFaz" method="post" onsubmit="return bt_cadastro()">
         <h1>Cadastre sua fazenda</h1>
+        <input class="inp_form" name="nomeFazenda" placeholder="nome da Fazenda" />
         <div class="inp">
           <select name="estado" id="estados">
             <option value="-">-- Selecione o local da fazenda --</option>
@@ -102,6 +103,7 @@
   function bt_cadastro() {
     var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastroFaz")));
 
+    var nomeFazenda = formulario.get("nomeFazenda");
     var estado = formulario.get("estado");
     var cidade = formulario.get("cidade");
     var logradouro = formulario.get("logradouro");
@@ -110,6 +112,7 @@
     var qtd_canteiros = formulario.get("qtd_canteiro");
     var idEmpresa = sessionStorage.ID_EMPRESA;
     console.log("estado: " + estado + "\n cidade" + cidade + "\n idempresa: " + idEmpresa);
+    
     if (estado == "-") {
       alert("Selecione o estado que sua Fazenda está");
       return false;

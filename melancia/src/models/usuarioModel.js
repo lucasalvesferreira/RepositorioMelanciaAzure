@@ -46,7 +46,7 @@ function cadastrar(cnpj, razao, responsavel, email, senha) {
 
 }
 
-function cadastrarFazenda(estado, cidade, logradouro, numero, complemento, qtd_canteiros, idEmpresa) {
+function cadastrarFazenda(nomeFazenda,estado, cidade, logradouro, numero, complemento, qtd_canteiros, idEmpresa) {
 
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", estado, cidade, logradouro, numero, complemento, qtd_canteiros, idEmpresa);
     var instrucao = 
@@ -56,8 +56,8 @@ function cadastrarFazenda(estado, cidade, logradouro, numero, complemento, qtd_c
     //      ('${estado}', '${cidade}', '${logradouro}', ${numero}, '${complemento}', ${qtd_canteiros}, ${idEmpresa});`;
 
     // nuvem
-    `INSERT INTO [dbo].[fazenda] (estado, cidade, logradouro, numero, complemento, qtd_canteiros, fkEmpresa) VALUES
-         ('${estado}', '${cidade}', '${logradouro}', ${numero}, '${complemento}', ${qtd_canteiros}, ${idEmpresa});`;
+    `INSERT INTO [dbo].[fazenda] (nomeFazenda,estado, cidade, logradouro, numero, complemento, qtd_canteiros, fkEmpresa) VALUES
+         ('${nomeFazenda}','${estado}', '${cidade}', '${logradouro}', ${numero}, '${complemento}', ${qtd_canteiros}, ${idEmpresa});`;
 
 
 

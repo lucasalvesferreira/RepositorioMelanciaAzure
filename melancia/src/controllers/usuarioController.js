@@ -98,6 +98,7 @@ function cadastrar(req, res) {
     }
 }
 function cadastrarFazenda(req, res) {
+    var nomeFazenda = req.body.nomeFazenda;
     var estado = req.body.estado;
     var cidade = req.body.cidade;
     var logradouro = req.body.logradouro;
@@ -111,9 +112,14 @@ function cadastrarFazenda(req, res) {
 
     if (estado == undefined) {
         res.status(400).send("Seu estado está undefined!");
-    } else if (cidade == undefined) {
+    }
+     else if (nomeFazenda == undefined) {
+        res.status(400).send("Sua Fazenda está undefined!");
+    }
+     else if (cidade == undefined) {
         res.status(400).send("Sua cidade está undefined!");
-    }else if (logradouro == undefined) {
+    }
+    else if (logradouro == undefined) {
         res.status(400).send("Sua logradouro está undefined!");
     }else if (numero == undefined) {
         res.status(400).send("Sua numero está undefined!");
@@ -124,7 +130,7 @@ function cadastrarFazenda(req, res) {
     }else if (idEmpresa == undefined) {
         res.status(400).send("Sua senha está undefined!");
     }else {
-        usuarioModel.cadastrarFazenda(estado, cidade, logradouro, numero, complemento, qtd_canteiros, idEmpresa)
+        usuarioModel.cadastrarFazenda(nomeFazenda,estado, cidade, logradouro, numero, complemento, qtd_canteiros, idEmpresa)
         .then(
             function (resultado) {
                 res.json(resultado);
