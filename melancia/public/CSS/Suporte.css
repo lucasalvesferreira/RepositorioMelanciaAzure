@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
+
+*{
+padding: 0;
+margin: 0;
+font-family: 'Spartan', sans-serif; 
+}
+
+:root{
+--red-main: #ff0000;
+--red-main-darker: #BF211E;
+--green-main: #27a300;
+--green-main-darker: #008000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bloco{
+border-radius: 2%;
+border: var(--green-main-darker) 5px outset;
+width: 40%;
+height: 550px;
+padding-top: 3%;
+padding-left: 3%;
+margin-left: 5%;
+margin-bottom: 5%;
+}
+
+.iframe {
+    width: 450px;
+    height: 461px;
+}
+
+.sup {
+    background-image: url(../assets/sup.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 550px;
+    width: 40%;
+}

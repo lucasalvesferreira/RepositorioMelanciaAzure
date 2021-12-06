@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
+
+*{
+padding: 0;
+margin: 0;
+font-family: 'Spartan', sans-serif; 
+}
+:root{
+--red-main: #ff0000;
+--red-main-darker: #BF211E;
+--green-main: #27a300;
+--green-main-darker: #008000;
+}
+.calculadora{
+height: 700px;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-image: url(../assets/moça1.png);  
+background-size: 30%;
+background-repeat: no-repeat;
+background-position: bottom;
+background-position-x:left;
+
+
+}
+.bloco{
+border-radius: 15%;
+border: var(--green-main) 5px outset;
+width: 30%;
+height: 550px;  
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding-top: 8%;
+padding-left: 7%;
+margin-left: 10%;
+}
+input{
+height: 45px;
+width: 60%;
+border: none;
+border-bottom: green 2px solid;
+font-size: 20px;
+outline: none;
+}
+
+h4{
+font-size: 30px;
+margin-bottom: 4%;
+}
+h2{
+font-size: 30px;
+margin-top: 8%;
+margin-bottom: 4%;
+}
+h1{
+font-size: 30px;
+text-align: center;
+padding-right: 26%;
+}
+
+
+/* BOTÃO VERDE ANIMADO */
+.btn {
+position: relative;
+display: inline-block;
+width: 277px;
+font-weight: bold;
+line-height: 60px;
+text-align: center;
+text-decoration:none;
+font-weight: bold;
+font-size:20px;
+color: var(--green-main-darker);
+}
+
+.btn svg {
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.btn svg rect {
+stroke-width: 2;
+stroke-dasharray: 353, 0;
+-webkit-transition: all 600ms ease;
+}
+.btn:hover svg rect {
+stroke-width: 2;
+stroke-dasharray: 196, 543;
+stroke-dashoffset: 437;
+}
+
+/* BOTÃO TEAM */
+button {
+border-radius: 4px;
+background-color: var(--green-main-darker);
+border: none;
+text-align: center;
+font-size: 28px;
+padding: 16px;
+width: 300px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 36px;
+box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+button{
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+button:after {
+content: '»';
+position: absolute;
+opacity: 0;  
+top: 14px;
+right: -20px;
+transition: 0.5s;
+}
+
+button:hover{
+padding-right: 24px;
+padding-left:8px;
+}
+
+button:hover:after {
+opacity: 1;
+right: 10px;
+}
+/* BOTÃO VERDE */
+.bntcomp {
+border-radius: 4px;
+background-color: var(--green-main-darker);
+color: white;
+border: none;
+text-align: center;
+font-size: 32px;
+padding: 16px;
+width: 220px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 36px;
+box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.bntcomp{
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.bntcomp:after {
+content: '»';
+position: absolute;
+opacity: 0;  
+top: 14px;
+right: -20px;
+transition: 0.5s;
+}
+
+.bntcomp:hover{
+padding-right: 24px;
+padding-left:8px;
+}
+
+.bntcomp:hover:after {
+opacity: 1;
+right: 10px;
+}

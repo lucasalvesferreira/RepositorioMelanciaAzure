@@ -1,0 +1,210 @@
+
+.firstline{
+height: 550px;
+width: 100%;
+display: flex;
+justify-content: center;
+margin-top: 3%;
+}
+.nossaline{
+height: 550px;
+display: flex;
+justify-items: center;
+font-weight: normal;
+background-image: url(../assets/escritorio3.jpg);
+background-repeat: no-repeat;
+background-position: right;
+background-size: 50%;
+margin-top: 5%;
+margin-bottom: 5%;
+margin-right: 2%;
+}
+.nossaline p{
+margin-top: 3%;
+}
+.nossaline h1{
+margin-top: 10%;
+}
+.calculadoraliner{
+height: 550px;
+display: flex;
+align-items: center;
+padding-top: 8%;
+background-image: url(../assets/vaso_moedas_planta.jpg);  
+background-size: 100%;
+background-position-y: 44%;
+}
+.calculadoraliner p{
+margin-top: 5%;
+}
+.teamliner{
+height: 550px;
+display: flex;
+justify-items: center;
+background-image: url(../assets/fundo_pessoas_computador.png);
+background-position: 50%;
+background-position-y: 50%;
+background-repeat: no-repeat;
+background-size:100%;
+font-weight: bold;
+}
+.textofirstline{
+width: 75%;
+
+}
+.textofirstline #mel{
+color: var(--red-main);
+}
+.textofirstline #ciaa{
+color: var(--green-main);
+}
+
+.textofirstline h3{
+display: flex;
+justify-content: center;
+font-weight: normal;
+font-size: 70px;
+margin-top: 5%;
+}
+.textofirstline h4{
+display: flex;
+justify-content: center;
+font-size: 30px;
+}
+.textofirstline p{
+display: flex;
+font-size: 20px;
+justify-content: center;
+text-align: center;
+}
+
+.textostart{
+width: 45%;
+height: 550px;
+display: flex;
+justify-items: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+margin-left: 1%;
+margin-top: 4%;
+font-size: 25px;
+}
+.textoend{
+width: 100%;
+height: 500px;
+display: flex;
+justify-items: flex-end;
+align-items:flex-end;
+flex-direction: column;
+text-align: center;
+margin-left: 5%;
+margin-top: 15%;
+font-size: 30px;
+}
+.textocenter{
+width: 100%;
+height: 500px;
+display: flex;
+justify-items: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+margin-left: 5%;
+margin-top: 15%;
+font-size: 50px;  
+color: white;
+}
+
+.calculadoraliner button {
+margin-top: 9%;
+}
+.teamliner .btn_b{
+margin-top: 5%;
+}
+.nossaline .bntcomp{
+margin-top: 9%;
+}
+
+
+/* BOTÃO TEAM */
+button {
+border-radius: 4px;
+background-color: white;
+border: none;
+text-align: center;
+font-size: 28px;
+padding: 16px;
+width: 300px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 36px;
+box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+button{
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+button:after {
+content: '»';
+position: absolute;
+opacity: 0;  
+top: 14px;
+right: -20px;
+transition: 0.5s;
+}
+
+button:hover{
+padding-right: 24px;
+padding-left:8px;
+}
+
+button:hover:after {
+opacity: 1;
+right: 10px;
+}
+/* BOTÃO VERDE */
+.bntcomp {
+border-radius: 4px;
+background-color: var(--green-main);
+color: white;
+border: none;
+text-align: center;
+font-size: 32px;
+padding: 16px;
+width: 300px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 36px;
+box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.bntcomp{
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.bntcomp:after {
+content: '»';
+position: absolute;
+opacity: 0;  
+top: 14px;
+right: -20px;
+transition: 0.5s;
+}
+
+.bntcomp:hover{
+padding-right: 24px;
+padding-left:8px;
+}
+
+.bntcomp:hover:after {
+opacity: 1;
+right: 10px;
+}

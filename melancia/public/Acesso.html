@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/navbar.css">
+  <link rel="shortcut icon" href="./assets/icons/melan2.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./CSS/Cadastro.css">
+
+  <title>Acesso e cadastro</title>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="cabeca">
+
+    <nav class="stroke">
+      <span id="top"></span>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Sobrenos.html">Sobre nós</a></li>
+        <li><a href="Calculadora.html">Calculadora</a></li>
+        <li><a href="Suporte.html">Suporte</a></li>
+        <li><a href="Acesso.html">Acesso</a></li>
+      </ul>
+    </nav>
+    </section>
+  </div>
+  <div class="formularioLeC">
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <!-- <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>  -->
+
+        <form id="form_cadastro" method="post" onsubmit="return bt_cadastro()">
+          <h1>Crie sua conta :</h1>
+          <span>ou use seu e-mail para registro</span>
+          <input type="text" name="responsavel" placeholder="Nome" />
+          <input type="email" name="email" placeholder="Email" />
+          <input type="email" name="confirm_email" placeholder="Confirme seu Email" />
+          <input type="text" name="razao" placeholder="Razão Social" />
+          <input type="text" name="cnpj" placeholder="CNPJ" />
+          <input type="password" name="senha" placeholder="Senha" />
+          <input type="password" name="confirm_senha" placeholder="Confirme sua Senha" />
+          <br>
+          <button>Inscrever-se</button>
+        </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+        <form id="form_login" method="post" onsubmit="return bt_entrar()">
+          <h1>Entrar</h1>
+          <!-- <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div> -->
+
+          <span>ou use sua conta</span>
+
+          <input type="email" name="email" placeholder="Email" />
+          <input type="password" name="senha" placeholder="Senha" />
+          <a href="#">Esqueceu sua senha?</a>
+          <button>Entrar</button>
+        </form>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Bem vindo de volta!</h1>
+            <p>Para se manter conectado conosco, faça o login com suas informações pessoais.</p>
+            <button class="ghost" onclick="entrar()">Entrar</button>
+          </div>
+
+          <div class="overlay-panel overlay-right">
+            <h1>Olá, seja bem vindo!</h1>
+            <p>Insira seus dados pessoais e comece a jornada conosco.</p>
+            <button class="ghost" onclick="cadastrar()">Inscrever-se</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+
+  <div class="footerline">
+    <div class="caixafooter">
+      <h3><span id="mel">Melan</span>.<span id="ciaa">cia</span></h3>
+    </div>
+    <div class="caixafooter">
+      <h1>Mapa do site</h1>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Sobrenos.html">Sobre nós</a></li>
+        <li><a href="Acesso.html">Acesso</a></li>
+        <li><a href="Calculadora.html">Calculadora</a></li>
+      </ul>
+    </div>
+    <div class="caixafooter">
+      <h1>Contato</h1>
+      <p>
+        <img src="./assets/icons/location-pointer.png"> Av.Paulista 355, SP 0808-3695, BR <br>
+        <img src="./assets/icons/envelope.png"> Melan_cia@gmail.com <br>
+        <img src="./assets/icons/phone-receiver-silhouette.png"> 11 25486321 <br>
+        <img src="./assets/icons/github.png"> Melan_cia
+      </p>
+    </div>
+  </div>
+  <div class="icons">
+    <p>
+      Melan.cia Copyright © 2021 grupo-5 Company All rights reserved.
+    </p>
+  </div>
+
+
+  <script>
+
+    const container = document.getElementById('container');
+
+    function cadastrar() {
+      container.classList.add("right-panel-active");
+    }
+
+    function entrar() {
+      container.classList.remove("right-panel-active");
+    }
+
+    function limparFormulario() {
+      document.getElementById("form_cadastro").reset();
+    }
+
+    function bt_cadastro() {
+
+      var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+      var responsavel = formulario.get("responsavel");
+      var cnpj = formulario.get("cnpj");
+      var razao = formulario.get("razao");
+      var email = formulario.get("email");
+      var confirm_email = formulario.get("confirm_email");
+      var senha = formulario.get("senha");
+      var confirm_senha = formulario.get("confirm_senha");
+
+
+
+
+      if (email == "" || responsavel == "" || cnpj == "" || razao == "" || confirm_email == "" || senha == "" || confirm_senha == "") {
+        alert("Por favor, preencha todos os campos");
+        return false;
+      } else if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+        window.alert("E-mail inválido! Verifique e tente novamente.");
+        return false;
+      }
+      else if (confirm_email != email) {
+        alert("Por favor digite o mesmo endereço de E-mail nos dois campos necessários");
+        return false;
+      } else if (confirm_senha != senha) {
+        alert("Por favor digite a mesma senha nos dois campos necessários");
+        return false;
+      }
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        body: formulario
+      }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+        if (resposta.ok) {
+          window.alert("Cadastro realizado com sucesso!");
+          entrar();
+          limparFormulario();
+        } else {
+          throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+      }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+      return false;
+    }
+
+    function bt_entrar() {
+
+      var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+      var email = formulario.get("email");
+      var senha = formulario.get("senha");
+
+      console.log("FORM LOGIN: ", email);
+      console.log("FORM SENHA: ", senha);
+
+      // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+      if (email == "" || senha == "") {
+        window.alert("Preencha todos os campos para prosseguir!");
+        return false;
+      }
+
+      if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+        window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+        return false;
+      }
+
+      fetch("/usuarios/autenticar", {
+        method: "POST",
+        body: formulario
+      }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+          console.log(resposta);
+
+          resposta.json().then(json => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.razaoEmp_USUARIO = json.razaoEmp;
+            sessionStorage.responsavel_USUARIO = json.responsavel;
+            sessionStorage.ID_EMPRESA = json.idEmpresa;
+
+            setTimeout(function () {
+              window.location = "./Dashboard/dashboard.html";
+            }, 1000); // apenas para exibir o loading
+
+          });
+
+        } else {
+
+          console.log("Houve um erro ao tentar realizar o login!");
+
+          resposta.text().then(texto => {
+            console.error(texto);
+          });
+        }
+
+      }).catch(function (erro) {
+        console.log(erro);
+      })
+
+      return false;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suporte</title>
+  <link rel="stylesheet" href="CSS/Suporte.css">
+  <link rel="stylesheet" href="./CSS/navbar.css">
+  <link rel="shortcut icon" href="./assets/icons/melan2.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="cabeca">
+    <nav class="stroke">
+      <span id="top"></span>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Sobrenos.html">Sobre nós</a></li>
+        <li><a href="Calculadora.html">Calculadora</a></li>
+        <li><a href="Suporte.html">Suporte</a></li>
+        <li><a href="Acesso.html">Acesso</a></li>
+      </ul>
+    </nav>
+    </section>
+  </div>
+  <div class="container">
+    <div class="sup"></div>
+    <div class="bloco">
+      <iframe class="iframe" src="https://app.pipefy.com/public/form/gSrubXvt" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footerline">
+    <div class="caixafooter">
+      <h3><span id="mel">Melan</span>.<span id="ciaa">cia</span></h3>
+    </div>
+    <div class="caixafooter">
+      <h1>Mapa do site</h1>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Sobrenos.html">Sobre nós</a></li>
+        <li><a href="Acesso.html">Acesso</a></li>
+        <li><a href="Calculadora.html">Calculadora</a></li>
+      </ul>
+    </div>
+    <div class="caixafooter">
+      <h1>Contato</h1>
+      <p>
+        <img src="./assets/icons/location-pointer.png"> Av.Paulista 355, SP 0808-3695, BR <br><br>
+        <img src="./assets/icons/envelope.png"> Melan_cia@gmail.com <br><br>
+        <img src="./assets/icons/phone-receiver-silhouette.png"> 11 25486321 <br><br>
+        <img src="./assets/icons/github.png"> Melan_cia <br> <br>
+      </p>
+    </div>
+  </div>
+  <div class="icons">
+    <p>
+      Melan.cia Copyright © 2021 grupo-5 Company All rights reserved.
+    </p>
+  </div>
+
+</body>
+
+</html>
+<script>
+  function bt_cal() {
+    var kilo = Number(inp_quilo.value);
+    var preço = Number(inp_preco.value);
+    var lucro = kilo * preço;
+    var perda = lucro * 0.4;
+    var ganho = lucro + perda;
+
+    bloco1.style.display = "none";
+    div_men.style.display = "block";
+    reset.style.display = "block";
+
+    valorlucro.innerHTML = `${lucro}%`
+    valorperda.innerHTML = `${perda}%`
+    // div_men.innerHTML = `Sem os sensores seu lucro seria de R$ <b style=" color: red;>${perda}</b>, com 40% de perda no
+    // plantio.
+    // <br> <br>
+    // Com os sensores implantados seu lucro pode chegar até R$ <b style="color: green;>${ganho}</b>`;
+  }
+  function bt_reset() {
+    bloco1.style.display = "block";
+    div_men.style.display = "none";
+    reset.style.display = "none";
+    cal.style.display = "block";
+  }
+
+
+
+
+
+
+
+</script>

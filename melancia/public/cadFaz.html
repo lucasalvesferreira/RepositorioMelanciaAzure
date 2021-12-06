@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/icons/melan2.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./CSS/cadfaz.css">
+  <script src="./assets/js/funcoes.js"></script>
+  <link rel="stylesheet" href="./Dashboard/dashboard.css">
+  <title>Cadastro de fazendas</title>
+
+</head>
+
+<body>
+  <!-- onload="validarSessao()" -->
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <ul id="menu">
+        <h1 class="nome_emp">Bem vindo a <b id="sp_empresa"></b><br>
+          Senhor(a) <b id="sp_resp"></b><br></h1>
+
+        <a href="./Dashboard/dashboard.html">
+          <li>Inicio</li>
+        </a>
+        <a href="./cadFaz.html">
+          <li>Cadastrar Fazenda</li>
+        </a>
+        <a href="./cadFunc.html">
+          <li>Cadastrar Funcionario</li>
+        </a>
+        <a href="./suporte2.html">
+          <li>Suporte</li>
+        </a>
+        <a href="./index.html">
+          <li>Sair</li>
+        </a>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="div1">
+      <form id="form_cadastroFaz" method="post" onsubmit="return bt_cadastro()">
+        <h1>Cadastre sua fazenda</h1>
+        <div class="inp">
+          <select name="estado" id="estados">
+            <option value="-">-- Selecione o local da fazenda --</option>
+            <option value="ac">Acre</option>
+            <option value="al">Alagoas</option>
+            <option value="ap">Amapá</option>
+            <option value="am">Amazonas</option>
+            <option value="bh">Bahia</option>
+            <option value="ce">Ceará</option>
+            <option value="es">Espírito Santo</option>
+            <option value="go">Goiás</option>
+            <option value="ma">Maranhão</option>
+            <option value="mt">Mato Grosso</option>
+            <option value="ms">Mato Grosso do Sul</option>
+            <option value="mg">Minas Gerais</option>
+            <option value="pa">Pará</option>
+            <option value="pb">Paraíba</option>
+            <option value="pr">Paraná</option>
+            <option value="pe">Pernambuco</option>
+            <option value="pi">Piauí</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="rn">Rio Grande do Norte</option>
+            <option value="rs">Rio Grande do Sul</option>
+            <option value="ro">Rondônia</option>
+            <option value="rr">Roraima</option>
+            <option value="sc">Acre</option>
+            <option value="sp">São Paulo</option>
+            <option value="se">Sergipe</option>
+            <option value="to">Tocantins</option>
+            <option value="df">Distrito Federal</option>
+          </select>
+          <input class="inp_form" name="cidade" placeholder="Cidade" />
+          <input class="inp_form" name="logradouro" placeholder="Rua" />
+          <input class="inp_form" type="number" name="numero" placeholder="Número" />
+          <input class="inp_form" type="text" name="complemento" placeholder="Complemento" />
+          <input class="inp_form" type="number" name="qtd_canteiros" placeholder="Canteiros" />
+
+        </div>
+        <br>
+        <button class="cadastrar">Cadastrar fazenda</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+<script>
+  function limparFormulario() {
+    document.getElementById("form_cadastroFaz").reset();
+  }
+  function bt_cadastro() {
+    var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastroFaz")));
+
+    var estado = formulario.get("estado");
+    var cidade = formulario.get("cidade");
+    var logradouro = formulario.get("logradouro");
+    var numero = formulario.get("numero");
+    var complemento = formulario.get("complemento");
+    var qtd_canteiros = formulario.get("qtd_canteiro");
+    var idEmpresa = sessionStorage.ID_EMPRESA;
+    console.log("estado: " + estado + "\n cidade" + cidade + "\n idempresa: " + idEmpresa);
+    if (estado == "-") {
+      alert("Selecione o estado que sua Fazenda está");
+      return false;
+    }
+    fetch(`/usuarios/cadastrarFazenda/${idEmpresa}`, {
+      method: "POST",
+      body: formulario
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+      if (resposta.ok) {
+        window.alert("Fazenda cadastrada!");
+        limparFormulario();
+        window.location = "./Dashboard/dashboard.html";
+      } else {
+        throw ("Houve um erro ao tentar realizar o cadastro!");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+    return false;
+  }
+
+
+</script>
+
+</html>
